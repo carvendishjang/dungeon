@@ -34,7 +34,7 @@ class MeleeAction(ActionWithDirection):
         if not target:
             return
 
-        print(f"You kick the {target, name}!")
+        print(f"You kick the {target.name}!")
 
 class MovementAction(ActionWithDirection):
 

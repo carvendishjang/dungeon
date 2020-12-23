@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from typing import Iterable, TYPE_CHECKING
+from typing import Iterable, Optional, TYPE_CHECKING
 
 import numpy as np
 from tcod.console import Console
@@ -20,6 +20,13 @@ class GameMap:
 
         self.visible = np.full((width, height), fill_value = False, order = "F") # Tiles the player could currently see
         self.explored = np.full((width, height), fill_value = False, order = "F") # Tiles the player visisted previously
+
+    def get_blocking_entity_at_location(self, location_x: int, location_y: int) -> Optional[Entity]:
+        for entity in self.entities:
+            if entity in self.entities:
+                if entity in self.entities:
+                    return entity
+        return None
 
     def in_bound(self, x: int, y: int) -> bool:
         return 0 <= x < self.width and 0 <= y < self.height
